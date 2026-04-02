@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swathi Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Swathi</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero hidden">
+  <div class="hero-text">
+    <h2>I'm <span class="animated-text"></span></h2>
+    <p>I build modern web applications and backend systems.</p>
+    <button class="btn">My Projects</button>
+  </div>
+  <img src="" alt="profile">
+</section>
+
+<section class="hidden">
+  <h2>My Amazing Work</h2>
+  <div class="cards">
+    <div class="card">Project 1</div>
+    <div class="card">Project 2</div>
+    <div class="card">Project 3</div>
+  </div>
+</section>
+
+<section class="hidden">
+  <h2>My CV Resume</h2>
+  <div class="cards">
+    <div class="card">Education</div>
+    <div class="card">Experience</div>
+  </div>
+</section>
+
+<section class="contact hidden" id="contact">
+  <h2>Contact Me</h2>
+
+  <p>📞 Phone: 
+    <a href="tel:+919876543210">+91 9876543210</a>
+  </p>
+
+  <p>📧 Email: 
+    <a href="mailto:swathi.dev@gmail.com">swathi.dev@gmail.com</a>
+  </p>
+
+  <p>📸 Instagram: 
+    <a href="https://instagram.com/yourusername" target="_blank">
+      @yourusername
+    </a>
+  </p>
+
+  <input type="text" placeholder="Name">
+  <input type="email" placeholder="Email">
+  <textarea placeholder="Message"></textarea>
+  <button class="btn">Send</button>
+</section>
+
+<footer>
+  <p>© 2026 Swathi Portfolio</p>
+</footer>
+
+<!-- 🔥 JS Animation -->
+<script>
+/* 🔥 Rotating Typing Effect */
+const roles = ["Java Developer 💻", "Backend Developer ⚙️", "Problem Solver 🧠"];
+let index = 0;
+let charIndex = 0;
+let currentText = "";
+let isDeleting = false;
+
+function typeEffect() {
+  const display = document.querySelector(".animated-text");
+  const fullText = roles[index];
+
+  if (isDeleting) {
+    currentText = fullText.substring(0, charIndex--);
+  } else {
+    currentText = fullText.substring(0, charIndex++);
+  }
+
+  display.textContent = currentText;
+
+  let speed = isDeleting ? 50 : 100;
+
+  if (!isDeleting && charIndex === fullText.length) {
+    speed = 1500;
+    isDeleting = true;
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    index = (index + 1) % roles.length;
+  }
+
+  setTimeout(typeEffect, speed);
+}
+
+typeEffect();
+
+/* 🔥 Scroll Animation (only once) */
+const elements = document.querySelectorAll(".hidden");
+
+window.addEventListener("scroll", () => {
+  elements.forEach(el => {
+    const position = el.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if (position < screenHeight - 100) {
+      el.classList.add("show");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
