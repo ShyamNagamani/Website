@@ -8,72 +8,116 @@
 </head>
 <body>
 
+<!-- 🔥 HEADER -->
 <header>
   <h1>Swathi</h1>
   <nav>
     <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Projects</a>
+    <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
+<!-- 🔥 HERO -->
 <section class="hero hidden">
   <div class="hero-text">
     <h2>I'm <span class="animated-text"></span></h2>
     <p>I build modern web applications and backend systems.</p>
-    <button class="btn">My Projects</button>
+    <button class="btn" onclick="document.getElementById('projects').scrollIntoView()">
+      My Projects
+    </button>
   </div>
-  <img src="" alt="profile">
+  <img src="F:\java\portfolio\assets\photo.jpg" alt="profile">
 </section>
 
-<section class="hidden">
+<!-- 🔥 PROJECTS -->
+<section class="hidden" id="projects">
   <h2>My Amazing Work</h2>
+
   <div class="cards">
-    <div class="card">Project 1</div>
-    <div class="card">Project 2</div>
-    <div class="card">Project 3</div>
+
+    <!-- 📱 Phone Book -->
+    <div class="card">
+      <h3>📱 Phone Book Management</h3>
+      <p>A system to store and manage contacts with search, favorites, and group features.</p>
+      <p><strong>Tech:</strong> Java, JDBC, PostgreSQL</p>
+      <button class="btn" onclick="window.open('https://github.com/yourlink1')">
+        View Project
+      </button>
+    </div>
+
+    <!-- 🏦 Banking -->
+    <div class="card">
+      <h3>🏦 Banking Application</h3>
+      <p>A console-based system for account creation, transactions, and balance checking.</p>
+      <p><strong>Tech:</strong> Java, OOP</p>
+      <button class="btn" onclick="window.open('https://github.com/yourlink2')">
+        View Project
+      </button>
+    </div>
+
+    <!-- 🛒 E-Commerce -->
+    <div class="card">
+      <h3>🛒 E-Commerce Website</h3>
+      <p>A responsive shopping site with product listing and cart functionality.</p>
+      <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+      <button class="btn" onclick="window.open('https://github.com/yourlink3')">
+        View Project
+      </button>
+    </div>
+
   </div>
 </section>
 
+<!-- 🔥 RESUME -->
 <section class="hidden">
   <h2>My CV Resume</h2>
   <div class="cards">
-    <div class="card">Education</div>
-    <div class="card">Experience</div>
+    <div class="card">Education Details</div>
+    <div class="card">Experience Details</div>
   </div>
 </section>
 
+<!-- 🔥 CONTACT -->
 <section class="contact hidden" id="contact">
   <h2>Contact Me</h2>
 
-  <p>📞 Phone: 
-    <a href="tel:+919876543210">+91 9876543210</a>
-  </p>
+  <div class="contact-box">
 
-  <p>📧 Email: 
-    <a href="mailto:swathi.dev@gmail.com">swathi.dev@gmail.com</a>
-  </p>
+    <div class="contact-item">
+      <span>📞</span>
+      <a href="tel:+919876543210">+91 9876543210</a>
+    </div>
 
-  <p>📸 Instagram: 
-    <a href="https://instagram.com/yourusername" target="_blank">
-      @yourusername
-    </a>
-  </p>
+    <div class="contact-item">
+      <span>📧</span>
+      <a href="mailto:swathi.dev@gmail.com">swathi.dev@gmail.com</a>
+    </div>
 
-  <input type="text" placeholder="Name">
-  <input type="email" placeholder="Email">
-  <textarea placeholder="Message"></textarea>
-  <button class="btn">Send</button>
+    <div class="contact-item">
+      <span>💻</span>
+      <a href="https://github.com/yourusername" target="_blank">
+        github.com/yourusername
+      </a>
+    </div>
+
+    <div class="contact-item">
+      <span>🔗</span>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank">
+        linkedin.com/in/yourprofile
+      </a>
+    </div>
+
+  </div>
 </section>
 
+<!-- 🔥 FOOTER -->
 <footer>
   <p>© 2026 Swathi Portfolio</p>
 </footer>
 
-<!-- 🔥 JS Animation -->
+<!-- 🔥 JS -->
 <script>
-/* 🔥 Rotating Typing Effect */
 const roles = ["Java Developer 💻", "Backend Developer ⚙️", "Problem Solver 🧠"];
 let index = 0;
 let charIndex = 0;
@@ -107,7 +151,7 @@ function typeEffect() {
 
 typeEffect();
 
-/* 🔥 Scroll Animation (only once) */
+/* Scroll Animation */
 const elements = document.querySelectorAll(".hidden");
 
 window.addEventListener("scroll", () => {
