@@ -287,3 +287,92 @@ footer {
   display: inline-block;
   width: 320px;
 }
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card p {
+  flex-grow: 1;   /* push button down */
+}
+
+.card .btn {
+  margin-top: 20px;
+}
+.card .btn {
+  margin-top: 20px;
+  align-self: center;
+}
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.card .btn {
+  width: fit-content;
+  align-self: flex-start;
+}
+.btn {
+  width: fit-content;
+}
+/* 🔥 MOBILE PERFECT FIX */
+@media (max-width: 768px) {
+
+  header {
+    flex-direction: column;
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 5px 10px;
+  }
+
+  /* 🔥 HERO FIX */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+    gap: 20px;
+  }
+
+  .hero-text h2 {
+    font-size: 28px;  /* reduce size */
+    height: auto;
+  }
+
+  .animated-text {
+    width: auto;
+  }
+
+  .hero img {
+    width: 180px;
+    height: 180px;
+  }
+
+  /* 🔥 BUTTON FIX */
+  .hero-text .btn {
+    margin: auto;
+  }
+
+  /* 🔥 SECTION */
+  section {
+    padding: 40px 20px;
+  }
+
+  /* 🔥 CARDS */
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* 🔥 CONTACT */
+  .contact-box {
+    grid-template-columns: 1fr;
+  }
+
+}
