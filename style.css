@@ -277,8 +277,13 @@ footer {
     padding: 40px 20px;
   }
 }
-#typing {
+.animated-text {
   display: inline-block;
-  width: 220px;
-  overflow: hidden;
+  width: 260px;
+}
+
+.contact-item {
+  height: auto;
+  min-height: 80px;
+  flex-direction: column;
 }
