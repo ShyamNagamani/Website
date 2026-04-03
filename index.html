@@ -22,7 +22,8 @@
 <!-- 🔥 HERO -->
 <section class="hero hidden">
   <div class="hero-text">
-    <h2>I'm <span class="animated-text"></span></h2>
+   <h2>I'm</h2>
+<h2><span class="animated-text"></span></h2>
     <p>I build modern web applications and backend systems.</p>
     <button class="btn" onclick="document.getElementById('projects').scrollIntoView()">
       My Projects
@@ -165,36 +166,18 @@
 <script>
 const roles = ["Java Developer 💻", "Backend Developer ⚙️", "Problem Solver 🧠"];
 let index = 0;
-let charIndex = 0;
-let currentText = "";
-let isDeleting = false;
 
-function typeEffect() {
+function changeText() {
   const display = document.querySelector(".animated-text");
-  const fullText = roles[index];
 
-  if (isDeleting) {
-    currentText = fullText.substring(0, charIndex--);
-  } else {
-    currentText = fullText.substring(0, charIndex++);
-  }
+  display.textContent = roles[index];
 
-  display.textContent = currentText;
+  index = (index + 1) % roles.length;
 
-  let speed = isDeleting ? 50 : 100;
-
-  if (!isDeleting && charIndex === fullText.length) {
-    speed = 1500;
-    isDeleting = true;
-  } else if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    index = (index + 1) % roles.length;
-  }
-
-  setTimeout(typeEffect, speed);
+  setTimeout(changeText, 2000);
 }
 
-typeEffect();
+changeText();
 
 /* Scroll Animation */
 const elements = document.querySelectorAll(".hidden");
