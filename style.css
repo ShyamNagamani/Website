@@ -203,9 +203,11 @@ h2 {
   color: white;
   text-decoration: none;
   font-size: 14px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+
+  /* 🔥 FIXED PART */
+  white-space: normal;        /* allow text to wrap */
+  word-break: break-all;      /* break long text */
+  overflow: visible;          /* don't hide text */
 }
 
 .contact-item:hover {
@@ -274,4 +276,9 @@ footer {
   section {
     padding: 40px 20px;
   }
+}
+#typing {
+  display: inline-block;
+  width: 220px;
+  overflow: hidden;
 }
